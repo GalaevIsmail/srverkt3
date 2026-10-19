@@ -147,4 +147,3 @@ npm run test:database
 Для сдачи передайте архив проекта либо загрузите содержимое папки в репозиторий.
 
 Документация: [NestJS — базы данных](https://docs.nestjs.com/techniques/database), [TypeORM — QueryBuilder](https://typeorm.io/docs/query-builder/select-query-builder/).
-
