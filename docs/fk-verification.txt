@@ -1,0 +1,17 @@
+                                       Table "public.products"
+   Column    |           Type           | Collation | Nullable |               Default                
+-------------+--------------------------+-----------+----------+--------------------------------------
+ id          | integer                  |           | not null | nextval('products_id_seq'::regclass)
+ title       | character varying(200)   |           | not null | 
+ description | text                     |           | not null | 
+ price       | numeric(12,2)            |           | not null | 
+ createdAt   | timestamp with time zone |           | not null | now()
+ seller_id   | integer                  |           | not null | 
+Indexes:
+    "PK_0806c755e0aca124e67c0cf6d7d" PRIMARY KEY, btree (id)
+    "IDX_products_seller_id" btree (seller_id)
+Check constraints:
+    "CHK_products_price_nonnegative" CHECK (price >= 0::numeric)
+Foreign-key constraints:
+    "FK_products_seller" FOREIGN KEY (seller_id) REFERENCES sellers(id) ON DELETE CASCADE
+
